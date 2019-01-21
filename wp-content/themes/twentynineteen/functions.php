@@ -17,6 +17,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	return;
 }
 
+require 'BFI_Thumb.php';
+require 'thumbs.php';
+
 if ( ! function_exists( 'twentynineteen_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -373,6 +376,46 @@ function create_bootstrap_menu( $theme_location ) {
 
     echo $menu_list;
 }
+
+//	set mô tả bài viết
+function sm_custom_meta() {
+    add_meta_box( 'sm_meta', __( 'Mô tả bài viết', 'sm-textdomain' ), 'sm_meta_callback', 'post' );
+}
+function sm_meta_callback( $post ) {
+    $featured = get_post_meta( $post->ID );
+    ?>
+
+    <p>
+    <div class="sm-row-content">
+        <label for="meta-checkbox">
+            <?php _e( 'Đoạn mô tả ngắn về bài viết (có thể nhập text hoặc html)', 'sm-textdomain' )?>
+
+            <textarea name="meta-checkbox" rows="8" style="width: 100%;" id="description"><?php if ( isset ( $featured['description'] ) ) echo $featured['description'][0]; ?></textarea>
+        </label>
+
+    </div>
+    </p>
+
+    <?php
+}
+add_action( 'add_meta_boxes', 'sm_custom_meta' );
+function sm_meta_save( $post_id ) {
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'sm_nonce' ] ) && wp_verify_nonce( $_POST[ 'sm_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+    // Checks for input and saves
+    if( isset( $_POST[ 'meta-checkbox' ] ) ) {
+        update_post_meta( $post_id, 'description', $_POST[ 'meta-checkbox' ] );
+    } else {
+        update_post_meta( $post_id, 'description', '' );
+    }
+}
+add_action( 'save_post', 'sm_meta_save' );
 
 function getChildCate($id_cate){
     $term_id = $id_cate;

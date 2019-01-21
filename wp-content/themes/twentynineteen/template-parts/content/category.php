@@ -1,4 +1,16 @@
 <!-- Content page -->
+
+<?php
+$category = get_category( get_query_var( 'cat' ) );
+$cat_id = $category->cat_ID;
+$total_product = $category->count;
+$slug = $category->slug;
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$args = array('posts_per_page' => 12, 'order' => 'DESC', 'orderby' => 'post_date','paged'=>$paged ,'category' => $cat_id);
+$postslist = get_posts($args);
+?>
+
+<?php if($slug !== 'bang-mau'){ ?>
 <section class="bgwhite p-t-55 p-b-65">
     <div class="container">
         <div class="row">
@@ -81,26 +93,18 @@
                 </div>
             </div>
 
-            <?php
-                $category = get_category( get_query_var( 'cat' ) );
-                $cat_id = $category->cat_ID;
-                $total_product = $category->count;
-                $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-                $args = array('posts_per_page' => 12, 'order' => 'DESC', 'orderby' => 'post_date','paged'=>$paged ,'cate_id' => $cat_id);
-                $postslist = get_posts($args);
-                ?>
-
             <div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
                 <!-- Product -->
                 <div class="row">
-                    <?php
-                    foreach ($postslist as $item){
-                    ?>
+                    <?php foreach ($postslist as $post) :
+        setup_postdata($post);
+        $image = get_post_thumb(get_the_ID(), 600, 800);
+        $src = $image['src']; ?>
                     <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail() ?></a>
+                                <a href="<?php the_permalink() ?>"><img src="<?php echo $src; ?>" alt="no img"></a>
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="<?php the_permalink() ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -117,7 +121,9 @@
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
+                    <?php
+                    endforeach;
+                    wp_reset_postdata(); ?>
                 </div>
 
                 <?php
@@ -135,3 +141,57 @@
         </div>
     </div>
 </section>
+<?php } else { ?>
+    <section class="bgwhite p-t-55 p-b-65">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 p-b-50">
+                    <!-- Product -->
+
+                    <div class="row">
+                        <?php foreach ($postslist as $post) :
+                            setup_postdata($post);
+                            $image = get_post_thumb(get_the_ID(), 600, 800);
+                            $src = $image['src']; ?>
+                            <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+                                <!-- Block2 -->
+                                <div class="block2">
+                                    <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                        <a href="<?php the_permalink() ?>"><img src="<?php echo $src; ?>" alt="no img"></a>
+
+                                        <div class="block2-overlay trans-0-4">
+                                            <a href="<?php the_permalink() ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                                <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                                <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="block2-txt p-t-20">
+                                        <a href="<?php the_permalink() ?>" class="block2-name dis-block s-text3 p-b-5">
+                                            <?php the_title() ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        endforeach;
+                        wp_reset_postdata(); ?>
+                    </div>
+
+                    <?php
+                    global $wp;
+                    $current_url = add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
+                    ?>
+
+                    <!-- Pagination -->
+                    <div class="pagination flex-m flex-w p-t-26">
+                        <?php for($k=1; $k <= $total_product/12+1; $k++){ ?>
+                            <a href="<?php echo $current_url.'?paged='.($k);?>" class="item-pagination flex-c-m trans-0-4 <?php if($k === $paged) echo "active-pagination"; ?>"><?php echo $k; ?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php } ?>

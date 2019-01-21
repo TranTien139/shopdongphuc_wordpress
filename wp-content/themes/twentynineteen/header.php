@@ -88,7 +88,7 @@
 
                         <?php create_bootstrap_menu('menu-top') ?>
                         <li>
-                            <a href="/bang-mau">Bảng màu</a>
+                            <a href="/danh-muc/bang-mau">Bảng màu</a>
                         </li>
                         <li>
                             <a href="/bang-gia">Bảng giá</a>
@@ -254,7 +254,7 @@
 
                 <?php create_bootstrap_menu('menu-top') ?>
                 <li>
-                    <a href="/bang-mau">Bảng màu</a>
+                    <a href="/danh-muc/bang-mau">Bảng màu</a>
                 </li>
                 <li>
                     <a href="/bang-gia">Bảng giá</a>
