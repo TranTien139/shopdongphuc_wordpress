@@ -507,7 +507,7 @@ iframe {
 ///////////////////////////////////////////////////////////
 */
 .header1 {
-  height: 125px;
+  height: 80px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -638,7 +638,7 @@ iframe {
 }
 
 .logo img {
-  max-height: 27px;
+  max-height: 75px;
 }
 
 
@@ -2344,6 +2344,19 @@ input.num-product::-webkit-outer-spin-button,
 input.num-product::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; 
+}
+
+.arrow-slick1.slick-arrow i{
+    font-size: 36px;
+    margin-top: -15px;
+}
+
+.logo-mobile img {
+    max-height: 50px;
+}
+
+.main_menu > li > .sub_menu {
+    padding-left: 0px;
 }
 
 

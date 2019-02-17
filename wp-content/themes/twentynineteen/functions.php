@@ -327,8 +327,6 @@ require get_template_directory() . '/inc/customizer.php';
 
 function create_bootstrap_menu( $theme_location ) {
     if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
-
-
         $menu = get_term( $locations[$theme_location], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
 
@@ -350,7 +348,7 @@ function create_bootstrap_menu( $theme_location ) {
                         $menu_array[] = '<li><a href="' . $submenu->url . '" class="'.$class.'">' . $submenu->title . '</a></li>' ."\n";
                     }
                 }
-                if( $bool == true && count( $menu_array ) > 0 ) {
+                if( $bool == true && count($menu_array ) > 0 ) {
                     $class = $current_url == $menu_item->url ? 'active': '';
                     $menu_list .= '<li >' ."\n";
                     $menu_list .= '<a class="'.$class.'" href="' . $menu_item->url . '">' . $menu_item->title . '</a>' ."\n";
