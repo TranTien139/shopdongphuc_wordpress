@@ -148,12 +148,7 @@ get_header();
                         </div>
                     </div>
                 </div>
-            <?php } else if (count($postslist) > 0) ?>
-                <?php
-            $args = array('posts_per_page' => 4, 'order' => 'DESC', 'orderby' => 'post_date', 'category' => $category->term_id);
-            $postslist = get_posts($args);
-            ?>
-            <?php if (count($postslist) > 0) { ?>
+            <?php } else if (count($postslist) > 0){ ?>
                 <div class="container">
                     <div class="sec-title p-b-60">
                         <a href="<?php echo esc_url($category_link); ?>"><h3 class="m-text5 t-center">
@@ -199,29 +194,29 @@ get_header();
             <div class="title">
                 <p><span style="color:#053c5a"><span style="font-size:36px">Quy trình làm việc</span></span></p>
             </div>
-            <div class="row">
+            <div class="row" >
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="row"><br>
-                        <p><img alt="" src="http://www.seamuniform.com/upload/images/Hainam/tu-van.png"
+                    <div class="row text-center"><br>
+                        <p style="padding-bottom: 10px; margin: 0px auto;"><img alt="" src="http://www.seamuniform.com/upload/images/Hainam/tu-van.png"
                                 style="height:105px;"></p>
                         <br></div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="row"><br>
-                        <p><img alt="" src="http://www.seamuniform.com/upload/images/Hainam/Thiet-ke-chot-mau.png"
+                    <div class="row text-center"><br>
+                        <p style="padding-bottom: 10px; margin: 0px auto;"><img alt="" src="http://www.seamuniform.com/upload/images/Hainam/Thiet-ke-chot-mau.png"
                                 style="height:105px; "></p>
                         <br></div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="row"><br>
-                        <p><img alt="" src="http://www.seamuniform.com/upload/images/Hainam/ky-hop-dong.png"
+                    <div class="row text-center">
+                        <p style="padding-bottom: 10px; margin: 0px auto;"><img alt="" src="http://www.seamuniform.com/upload/images/Hainam/ky-hop-dong.png"
                                 style="height:105px; "></p>
                         <br></div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="row"><p>&nbsp;</p>
+                    <div class="row text-center">
 
-                        <p><img alt="" src="http://www.seamuniform.com/upload/images/Hainam/san-xuat.png"
+                        <p style="padding-bottom: 10px; margin: 0px auto;"><img alt="" src="http://www.seamuniform.com/upload/images/Hainam/san-xuat.png"
                                 style="height:105px;"></p>
 
                         <p>&nbsp;</p>
