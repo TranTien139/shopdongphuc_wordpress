@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Bảng giá
+Template Name: Bảng màu
 */
 get_header(); ?>
 

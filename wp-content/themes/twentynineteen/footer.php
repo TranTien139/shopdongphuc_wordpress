@@ -10,20 +10,14 @@
 
             <div>
                 <p class="s-text7 w-size27">
-                    - 165 xuân thủy , cầu giấy, hà nội
+                    - Địa chỉ: 103 Núi Trúc, Ba Đình, Hà Nội
                 </p>
                 <p class="s-text7 w-size27">
-                    - sdt: 0123456789
+                    - Sdt: 096 352 13 65
                 </p>
                 <p class="s-text7 w-size27">
-                    - email: tienfethust@gmail.com
+                    - Email: dongphucneo@gmail.com
                 </p>
-
-                <div class="flex-m p-t-30">
-                    <a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-                    <a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-                    <a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
-                </div>
             </div>
         </div>
 
@@ -31,7 +25,7 @@
             <a href="/danh-muc/danh-muc-san-pham"><h4 class="s-text12 p-b-30">
                     Danh mục
                 </h4></a>
-            <a href="/danh-muc/bang-mau"><h4 class="s-text12 p-b-30">
+            <a href="/bang-mau"><h4 class="s-text12 p-b-30">
                     Bảng màu
                 </h4></a>
         </div>
@@ -46,12 +40,12 @@
         </div>
 
         <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
-            <div class="fb-page" data-href="https://www.facebook.com/Smart-Toeic-Vocabulary-218578251661994/"
+            <div class="fb-page" data-href="https://www.facebook.com/neouniform/"
                  data-tabs="timeline" data-width="400" data-height="200" data-small-header="false"
                  data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/Smart-Toeic-Vocabulary-218578251661994/"
+                <blockquote cite="https://www.facebook.com/neouniform/"
                             class="fb-xfbml-parse-ignore"><a
-                            href="https://www.facebook.com/Smart-Toeic-Vocabulary-218578251661994/">Smart Toeic
+                            href="https://www.facebook.com/neouniform/">Neouniform
                         Vocabulary</a></blockquote>
             </div>
         </div>

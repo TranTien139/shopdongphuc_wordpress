@@ -64,13 +64,13 @@
 
                         <?php create_bootstrap_menu('menu-top') ?>
                         <li>
-                            <a href="/danh-muc/bang-mau">Bảng màu</a>
+                            <a href="/bang-mau">Bảng màu</a>
                         </li>
                         <li>
                             <a href="/bang-gia">Bảng giá</a>
                         </li>
                         <li>
-                            <a href="/lien-he">liên hệ</a>
+                            <a href="/lien-he">Liên hệ</a>
                         </li>
                     </ul>
                 </nav>
@@ -122,7 +122,7 @@
                 <?php create_bootstrap_menu('menu-top') ?>
                 <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
                      <span class="topbar-child1">
-							 <a href="/danh-muc/bang-mau">Bảng màu</a>
+							 <a href="/bang-mau">Bảng màu</a>
                     </span>
                 </li>
                 <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
@@ -132,7 +132,7 @@
                 </li>
                 <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
                     <span class="topbar-child1">
-							 <a href="/lien-he">liên hệ</a>
+							 <a href="/lien-he">Liên hệ</a>
                     </span>
                 </li>
             </ul>
