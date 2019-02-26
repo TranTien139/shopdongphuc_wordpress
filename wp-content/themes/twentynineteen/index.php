@@ -39,7 +39,7 @@ get_header();
                                         <img src="<?php echo $src ?>" alt="IMG-PRODUCT">
                                     </a>
 
-                                    <div class="w-size23 p-t-5">
+                                    <div class="w-size23 p-t-5" id="list_article_new">
                                         <a href="<?php the_permalink() ?>" class="s-text20">
                                            <?php the_title() ?>
                                         </a>

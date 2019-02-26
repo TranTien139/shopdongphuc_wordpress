@@ -78,7 +78,7 @@ $total = $wpex_query->post_count;
         </div>
     </div>
     <?php }else{ ?>
-        <h1 class="text-center" style="margin-bottom: 30px;">
+        <h1 class="text-center" style="margin-bottom: 30px; font-size: 40px;">
             <?php the_title() ?>
         </h1>
         <div>

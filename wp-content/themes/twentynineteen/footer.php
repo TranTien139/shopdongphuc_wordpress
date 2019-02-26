@@ -28,6 +28,9 @@
             <a href="/bang-mau"><h4 class="s-text12 p-b-30">
                     Bảng màu
                 </h4></a>
+            <a href="/bang-size"><h4 class="s-text12 p-b-30">
+                    Bảng size
+                </h4></a>
         </div>
 
         <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">

@@ -1063,7 +1063,7 @@ li.sale-noti > a {
   padding-left: 20px;
   font-family: Montserrat-Regular;
   font-size: 15px;
-  color: white;
+  /*color: white;*/
   line-height: 2.86;
 }
 
@@ -2361,5 +2361,11 @@ input.num-product::-webkit-inner-spin-button {
 
 .arrow-slick2:hover, .arrow-slick2:focus{
     background: transparent;
+}
+
+#list_article_new{
+    margin-top: -15px;
+    max-height: 85px;
+    overflow: hidden;
 }
 

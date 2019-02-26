@@ -345,12 +345,12 @@ function create_bootstrap_menu( $theme_location ) {
                     if( $submenu->menu_item_parent == $parent ) {
                         $bool = true;
                         $class = $current_url == $submenu->url ? 'active': '';
-                        $menu_array[] = '<li><a href="' . $submenu->url . '" class="'.$class.'">' . $submenu->title . '</a></li>' ."\n";
+                        $menu_array[] = '<li class="item-topbar-mobile p-t-8 p-b-8"><a href="' . $submenu->url . '" class="'.$class.'">' . $submenu->title . '</a></li>' ."\n";
                     }
                 }
                 if( $bool == true && count($menu_array ) > 0 ) {
                     $class = $current_url == $menu_item->url ? 'active': '';
-                    $menu_list .= '<li >' ."\n";
+                    $menu_list .= '<li class="item-topbar-mobile p-t-8 p-b-8">' ."\n";
                     $menu_list .= '<a class="'.$class.'" href="' . $menu_item->url . '">' . $menu_item->title . '</a>' ."\n";
 
                     $menu_list .= '<ul class="sub_menu">' ."\n";
@@ -359,7 +359,7 @@ function create_bootstrap_menu( $theme_location ) {
 
                 } else {
                     $class = $current_url == $menu_item->url ? 'active': '';
-                    $menu_list .= '<li>' ."\n";
+                    $menu_list .= '<li class="item-topbar-mobile p-t-8 p-b-8">' ."\n";
                     $menu_list .= '<a class="'.$class.'" href="' . $menu_item->url . '">' . $menu_item->title . '</a>' ."\n";
                 }
 
